@@ -109,12 +109,11 @@ PROCESS {
     
     
     try {
-        $User = "admin"
-        #$user = $username
+ 
         $PasswordFile = $password
-        #$KeyFile = "c:\scripts\AES.key"
+        
         $key = Get-Content $keyfile
-        $Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, (Get-Content $PasswordFile | ConvertTo-SecureString -Key $key)
+        $Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $username, (Get-Content $PasswordFile | ConvertTo-SecureString -Key $key)
         
         
         
